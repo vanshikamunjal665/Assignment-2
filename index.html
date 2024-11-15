@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Impact Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+            margin: 0;
+        }
+        h2 {
+            color: #00695c;
+            text-align: center;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #004d40;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+        h3 {
+            color: #004d40;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Climate Impact Prediction</h2>
+        <form method="POST" action="/predict">
+            <label for="biofuel_consumption">Biofuel Consumption:</label>
+            <input type="number" step="any" name="biofuel_consumption" required>
+
+            <label for="coal_consumption">Coal Consumption:</label>
+            <input type="number" step="any" name="coal_consumption" required>
+
+            <label for="electricity_demand">Electricity Demand:</label>
+            <input type="number" step="any" name="electricity_demand" required>
+
+            <label for="fossil_fuel_consumption">Fossil Fuel Consumption:</label>
+            <input type="number" step="any" name="fossil_fuel_consumption" required>
+
+            <label for="greenhouse_gas_emissions">Greenhouse Gas Emissions:</label>
+            <input type="number" step="any" name="greenhouse_gas_emissions" required>
+
+            <label for="renewables_consumption">Renewables Consumption:</label>
+            <input type="number" step="any" name="renewables_consumption" required>
+
+            <label for="solar_consumption">Solar Consumption:</label>
+            <input type="number" step="any" name="solar_consumption" required>
+
+            <label for="wind_consumption">Wind Consumption:</label>
+            <input type="number" step="any" name="wind_consumption" required>
+
+            <input type="submit" value="Predict Impact">
+        </form>
+
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
